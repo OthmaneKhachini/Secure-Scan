@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyber_background"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cyber_background"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/cyber_background"
+            app:navigationIcon="@drawable/ic_history"
+            app:navigationIconTint="@color/white"
+            app:title="Security Intelligence Report"
+            app:titleTextColor="@color/white"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 1. Dynamic Verdict Banner -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/verdict_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#1A4CD964"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/cyber_safe">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:id="@+id/iv_verdict_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_securescan_logo"
+                        app:tint="@color/cyber_safe"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/tv_verdict_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/verdict_safe"
+                        android:textColor="@color/cyber_safe"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. Technical Context (Specific for URL or File) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tech_info_card"
+                style="@style/SecureScanCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:id="@+id/tv_tech_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/technical_intel"
+                        android:textColor="@color/cyber_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_tech_rows"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. Security Score Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SecureScanCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/cyber_surface_variant">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <FrameLayout
+                            android:id="@+id/score_gauge_container"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:progress="100"
+                                app:indicatorSize="130dp"
+                                app:trackColor="#0DFFFFFF"
+                                app:trackThickness="10dp" />
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:id="@+id/score_gauge"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:progress="98"
+                                app:indicatorColor="@color/cyber_safe"
+                                app:indicatorSize="130dp"
+                                app:trackColor="@android:color/transparent"
+                                app:trackThickness="10dp"
+                                app:trackCornerRadius="8dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_score_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="98"
+                                    android:textColor="@color/white"
+                                    android:textSize="36sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_score_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SAFE"
+                                    android:textColor="@color/cyber_safe"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold"
+                                    android:letterSpacing="0.1" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@id/score_gauge_container">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/threat_level_label"
+                                    android:textColor="@color/cyber_neutral"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/tv_threat_level"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/risk_minimal"
+                                    android:textColor="@color/cyber_safe"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <View android:layout_width="1dp" android:layout_height="24dp" android:background="#1AFFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/detection_ratio_label"
+                                    android:textColor="@color/cyber_neutral"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/tv_detection_ratio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0 / 91"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <View android:layout_width="1dp" android:layout_height="24dp" android:background="#1AFFFFFF" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/reputation"
+                                    android:textColor="@color/cyber_neutral"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/tv_reputation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/score_explanation"
+                        android:textColor="@color/cyber_neutral"
+                        android:textSize="10sp"
+                        android:alpha="0.6"
+                        android:lineSpacingExtra="2dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. Dynamic Evidence Section -->
+            <TextView
+                android:id="@+id/tv_evidence_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/analysis_evidence"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SecureScanCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#0DFFFFFF">
+
+                <LinearLayout
+                    android:id="@+id/ll_safe_checks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 5. Analysis Summary (Horizontal Progress Bars) -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SecureScanCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/analysis_summary"
+                        android:textColor="@color/cyber_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <!-- Harmless -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Safe" android:textColor="@color/white" android:textSize="11sp" />
+                            <TextView android:id="@+id/tv_count_harmless" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/cyber_safe" android:textSize="11sp" android:textStyle="bold" tools:text="91" />
+                        </LinearLayout>
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progress_harmless"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:indicatorColor="@color/cyber_safe"
+                            app:trackColor="#1AFFFFFF"
+                            app:trackThickness="6dp"
+                            app:trackCornerRadius="3dp" />
+                    </LinearLayout>
+
+                    <!-- Malicious -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Malicious" android:textColor="@color/white" android:textSize="11sp" />
+                            <TextView android:id="@+id/tv_count_malicious" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/cyber_malicious" android:textSize="11sp" android:textStyle="bold" tools:text="0" />
+                        </LinearLayout>
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progress_malicious"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:indicatorColor="@color/cyber_malicious"
+                            app:trackColor="#1AFFFFFF"
+                            app:trackThickness="6dp"
+                            app:trackCornerRadius="3dp" />
+                    </LinearLayout>
+
+                    <!-- Suspicious -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Suspicious" android:textColor="@color/white" android:textSize="11sp" />
+                            <TextView android:id="@+id/tv_count_suspicious" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/cyber_suspicious" android:textSize="11sp" android:textStyle="bold" tools:text="0" />
+                        </LinearLayout>
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progress_suspicious"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:indicatorColor="@color/cyber_suspicious"
+                            app:trackColor="#1AFFFFFF"
+                            app:trackThickness="6dp"
+                            app:trackCornerRadius="3dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 6. Detection Engines Section (Expandable) -->
+            <LinearLayout
+                android:id="@+id/ll_engines_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_glass_card"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/detection_engines"
+                    android:textColor="@color/cyber_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_engine_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/cyber_neutral"
+                    android:textSize="11sp"
+                    android:layout_marginEnd="12dp"
+                    tools:text="91 engines" />
+
+                <ImageView
+                    android:id="@+id/iv_expand"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dashboard"
+                    android:contentDescription="@string/detection_engines"
+                    app:tint="@color/cyber_neutral" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_engines_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/glass_white_10"
+                    app:cardCornerRadius="14dp"
+                    app:strokeWidth="0dp">
+
+                    <EditText
+                        android:id="@+id/et_search_engines"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_dashboard"
+                        android:drawablePadding="12dp"
+                        android:hint="@string/search_engines_hint"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/cyber_neutral"
+                        android:textSize="13sp"
+                        android:inputType="text"
+                        android:importantForAutofill="no" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_engine_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_engine_result" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

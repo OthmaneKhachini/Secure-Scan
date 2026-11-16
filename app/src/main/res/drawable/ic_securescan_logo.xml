@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Very Subtle Integrated Shield -->
+    <path
+        android:pathData="M100,20 L45,45 V85 C45,125 100,175 100,175 C100,175 155,125 155,85 V45 L100,20 Z"
+        android:strokeWidth="1.2"
+        android:strokeColor="#1A00D2FF">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="100"
+                android:startY="20"
+                android:endX="100"
+                android:endY="175"
+                android:type="linear">
+                <item android:offset="0" android:color="#1A1E293B" />
+                <item android:offset="1" android:color="#00000000" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Radar Pulse Arc (Subtle Neon) -->
+    <path
+        android:pathData="M100,50 A50,50 0 0 1 150,100"
+        android:strokeWidth="1.5"
+        android:alpha="0.2"
+        android:strokeColor="#00D2FF" />
+
+    <!-- Technical Detailing -->
+    <path
+        android:pathData="M70,70 H85 M70,70 V85"
+        android:strokeWidth="0.8"
+        android:strokeLineCap="round"
+        android:strokeColor="#2200F2FE" />
+
+    <!-- Sophisticated Integrated Magnifying Glass -->
+    <path
+        android:pathData="M100,100 m-24,0 a24,22 0,1 1,48 0 a24,22 0,1 1,-48 0"
+        android:strokeWidth="1.8"
+        android:strokeColor="#454D5A" />
+    <path
+        android:pathData="M118,118 L138,138"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeColor="#454D5A" />
+
+    <!-- Intelligence Core (The only bright element) -->
+    <path
+        android:pathData="M100,100 m-8,0 a8,8 0,1 1,16 0 a8,8 0,1 1,-16 0"
+        android:fillColor="#00F2FE" />
+
+</vector>

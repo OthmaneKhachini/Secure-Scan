@@ -1,0 +1,82 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <group
+        android:pivotX="100"
+        android:pivotY="100"
+        android:scaleX="0.75"
+        android:scaleY="0.75">
+
+        <!-- Deep Outer Shield -->
+        <path
+            android:pathData="M100,5 L25,35 V85 C25,145 100,195 100,195 C100,195 175,145 175,85 V35 L100,5 Z"
+            android:strokeWidth="0.5"
+            android:strokeColor="#1A00D2FF">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:startX="100"
+                    android:startY="5"
+                    android:endX="100"
+                    android:endY="195"
+                    android:type="linear">
+                    <item android:offset="0" android:color="#2A0F172A" />
+                    <item android:offset="1" android:color="#00000000" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Main Shield Body -->
+        <path
+            android:pathData="M100,15 L35,42 V85 C35,135 100,185 100,185 C100,185 165,135 165,85 V42 L100,15 Z"
+            android:strokeWidth="1.5"
+            android:strokeColor="#3300D2FF">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:startX="100"
+                    android:startY="15"
+                    android:endX="100"
+                    android:endY="185"
+                    android:type="linear">
+                    <item android:offset="0" android:color="#1E293B" />
+                    <item android:offset="1" android:color="#0F172A" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Cyber Circuit Detailing -->
+        <path
+            android:pathData="M65,65 H85 M65,65 V85"
+            android:strokeWidth="1"
+            android:strokeLineCap="round"
+            android:strokeColor="#3300F2FE" />
+
+        <!-- Scanning Arc -->
+        <path
+            android:pathData="M100,45 A55,55 0 0 1 155,100"
+            android:strokeWidth="1.5"
+            android:alpha="0.3"
+            android:strokeColor="#00D2FF" />
+
+        <!-- Professional Magnifying Glass -->
+        <path
+            android:pathData="M100,100 m-22,0 a22,22 0,1 1,44 0 a22,22 0,1 1,-44 0"
+            android:strokeWidth="1.5"
+            android:strokeColor="#454D5A" />
+        <path
+            android:pathData="M115,115 L130,130"
+            android:strokeWidth="3.5"
+            android:strokeLineCap="round"
+            android:strokeColor="#454D5A" />
+
+        <!-- Intelligence Core -->
+        <path
+            android:pathData="M100,100 m-8,0 a8,8 0,1 1,16 0 a8,8 0,1 1,-16 0"
+            android:fillColor="#00F2FE" />
+
+    </group>
+
+</vector>

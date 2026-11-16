@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/cyber_background" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient
+                android:angle="135"
+                android:centerColor="#050B18"
+                android:endColor="#0F172A"
+                android:startColor="#050B18"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list>

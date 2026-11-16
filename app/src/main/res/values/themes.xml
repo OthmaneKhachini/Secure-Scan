@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SecureScan" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="android:windowBackground">@color/cyber_background</item>
+        <item name="colorPrimary">@color/cyber_primary</item>
+        <item name="colorSecondary">@color/cyber_secondary</item>
+        <item name="android:statusBarColor">@color/cyber_background</item>
+        <item name="android:navigationBarColor">@color/cyber_background</item>
+        <item name="colorSurface">@color/cyber_surface</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.SecureScan.TitleLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.SecureScan.BodyMedium</item>
+    </style>
+
+    <style name="Theme.SecureScan" parent="Base.Theme.SecureScan" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.SecureScan.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:statusBarColor">@color/cyber_background</item>
+        <item name="android:navigationBarColor">@color/cyber_background</item>
+    </style>
+
+    <!-- Typography -->
+    <style name="TextAppearance.SecureScan.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="TextAppearance.SecureScan.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">#E2E8F0</item>
+    </style>
+
+    <!-- Premium Card Styles -->
+    <style name="SecureScanCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/cyber_surface</item>
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="strokeColor">@color/glass_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Glassmorphism Style -->
+    <style name="SecureScanGlassCard">
+        <item name="android:background">@drawable/bg_glass_card</item>
+    </style>
+</resources>

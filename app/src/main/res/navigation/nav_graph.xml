@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.securescan.ui.dashboard.DashboardFragment"
+        android:title="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_global_resultDetailFragment"
+            app:destination="@id/resultDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/urlScannerFragment"
+        android:name="com.example.securescan.ui.urlscanner.UrlScannerFragment"
+        android:title="URL Scanner"
+        tools:layout="@layout/fragment_url_scanner">
+        <action
+            android:id="@+id/action_urlScannerFragment_to_resultDetailFragment"
+            app:destination="@id/resultDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fileScannerFragment"
+        android:name="com.example.securescan.ui.filescanner.FileScannerFragment"
+        android:title="File Scanner"
+        tools:layout="@layout/fragment_file_scanner">
+        <action
+            android:id="@+id/action_fileScannerFragment_to_resultDetailFragment"
+            app:destination="@id/resultDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.securescan.ui.history.HistoryFragment"
+        android:title="History"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_historyFragment_to_resultDetailFragment"
+            app:destination="@id/resultDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultDetailFragment"
+        android:name="com.example.securescan.ui.results.ResultDetailFragment"
+        android:title="Scan Results"
+        tools:layout="@layout/fragment_result_detail">
+        <argument
+            android:name="analysisId"
+            app:argType="string" />
+        <argument
+            android:name="scanType"
+            app:argType="string"
+            android:defaultValue="unknown" />
+    </fragment>
+
+</navigation>

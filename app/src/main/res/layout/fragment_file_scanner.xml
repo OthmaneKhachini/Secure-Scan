@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyber_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Background Grid -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_cyber_grid"
+        android:scaleType="centerCrop"
+        android:alpha="0.1" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="120dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:paddingTop="48dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/file_analysis"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.01"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/file_subtitle"
+                android:textColor="@color/cyber_primary"
+                android:textSize="13sp"
+                android:alpha="0.8"
+                android:gravity="center" />
+
+            <!-- Target Zone -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_upload"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="32dp"
+                app:cardBackgroundColor="#0F172A"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#1AFFFFFF"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/v_pulse"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_pulse"
+                        android:alpha="0" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_upload"
+                            app:tint="@color/cyber_primary"
+                            android:contentDescription="@string/upload_hint" />
+
+                        <TextView
+                            android:id="@+id/tv_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/upload_hint"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+
+                        <TextView
+                            android:id="@+id/tv_selected_file"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:textColor="@color/cyber_neutral"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            tools:text="security_patch.bin"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_scan_file"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/init_cloud_analysis"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/cyber_primary"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <!-- Status Section -->
+            <LinearLayout
+                android:id="@+id/ll_scanning_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/scan_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    app:indicatorColor="@color/cyber_primary"
+                    app:trackColor="#0DFFFFFF" />
+
+                <TextView
+                    android:id="@+id/tv_scan_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/extracting_package"
+                    android:textColor="@color/cyber_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

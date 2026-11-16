@@ -1,0 +1,66 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Outer Shield Glow -->
+    <path
+        android:pathData="M100,10 L30,40 V90 C30,140 100,190 100,190 C100,190 170,140 170,90 V40 L100,10 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="100"
+                android:startY="10"
+                android:endX="100"
+                android:endY="190"
+                android:type="linear">
+                <item android:offset="0" android:color="#3300D2FF" />
+                <item android:offset="1" android:color="#0000D2FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Main Shield -->
+    <path
+        android:pathData="M100,20 L40,45 V85 C40,125 100,175 100,175 C100,175 160,125 160,85 V45 L100,20 Z"
+        android:strokeWidth="2"
+        android:strokeColor="#00D2FF">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="100"
+                android:startY="20"
+                android:endX="100"
+                android:endY="175"
+                android:type="linear">
+                <item android:offset="0" android:color="#0F172A" />
+                <item android:offset="1" android:color="#050B18" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Circuit Pattern -->
+    <path
+        android:pathData="M80,60 H120 M70,80 H130 M90,100 H110 M100,60 V140"
+        android:strokeWidth="1"
+        android:alpha="0.3"
+        android:strokeColor="#00F2FE" />
+
+    <!-- Central Node -->
+    <path
+        android:pathData="M100,90 m-15,0 a15,15 0,1 1,30 0 a15,15 0,1 1,-30 0"
+        android:fillColor="#00D2FF"
+        android:alpha="0.8" />
+
+    <!-- Magnifying Glass -->
+    <path
+        android:pathData="M115,105 L135,125"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeColor="#FFFFFF" />
+    <path
+        android:pathData="M110,100 m-12,0 a12,12 0,1 1,24 0 a12,12 0,1 1,-24 0"
+        android:strokeWidth="3"
+        android:strokeColor="#FFFFFF" />
+
+</vector>

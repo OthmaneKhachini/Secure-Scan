@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- CyberShield Premium Palette -->
+    <color name="cyber_background">#050B18</color>
+    <color name="cyber_surface">#0F172A</color>
+    <color name="cyber_surface_variant">#1E293B</color>
+
+    <color name="cyber_primary">#00D2FF</color>
+    <color name="cyber_primary_variant">#3A7BD5</color>
+    <color name="cyber_secondary">#00F2FE</color>
+
+    <color name="cyber_accent">#4FACFE</color>
+    <color name="cyber_accent_glow">#00F2FE</color>
+
+    <color name="cyber_malicious">#FF3B30</color>
+    <color name="cyber_suspicious">#FFCC00</color>
+    <color name="cyber_safe">#4CD964</color>
+    <color name="cyber_neutral">#8E8E93</color>
+
+    <!-- Glassmorphism Colors -->
+    <color name="glass_white_10">#1AFFFFFF</color>
+    <color name="glass_white_20">#33FFFFFF</color>
+    <color name="glass_stroke">#40FFFFFF</color>
+
+    <!-- Gradients -->
+    <item name="gradient_start" type="color">#00D2FF</item>
+    <item name="gradient_end" type="color">#3A7BD5</item>
+</resources>

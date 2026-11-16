@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    style="@style/SecureScanCard"
+    app:cardBackgroundColor="@color/cyber_surface"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cb_selection"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:buttonTint="@color/cyber_primary"
+            tools:visibility="visible" />
+
+        <!-- Status Indicator Bar -->
+        <View
+            android:id="@+id/v_status_indicator"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/cyber_safe"
+            tools:background="@color/cyber_malicious" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_url"
+                android:padding="8dp"
+                android:background="@drawable/bg_type_tag"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/cyber_primary"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/tv_target"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete_item"
+                app:layout_constraintStart_toEndOf="@id/iv_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="https://securescan.app/analysis/report_v3" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cyber_neutral"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:alpha="0.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_delete_item"
+                tools:text="URL" />
+
+            <ImageButton
+                android:id="@+id/btn_delete_item"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/cyber_neutral"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/delete_item" />
+
+            <TextView
+                android:id="@+id/tv_stats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/cyber_safe"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_target"
+                app:layout_constraintTop_toBottomOf="@id/tv_target"
+                tools:text="System Secure: No indicators found" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:alpha="0.5"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_target"
+                app:layout_constraintTop_toBottomOf="@id/tv_stats"
+                tools:text="Scan Date: Jun 04, 2024 · 18:47" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

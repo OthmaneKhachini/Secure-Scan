@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">SecureScan</string>
+    <string name="tagline">Analyze. Detect. Protect.</string>
+    <string name="advanced_tagline">Advanced Threat Analysis &amp; Security Scanning</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="url_scanner">URL Scanner</string>
+    <string name="file_scanner">File Scanner</string>
+    <string name="history">History</string>
+
+    <string name="security_score">SECURITY SCORE</string>
+    <string name="at_risk">Risk Detected</string>
+    <string name="system_healthy">System scan complete</string>
+
+    <string name="total_scans">Total Scans</string>
+    <string name="threats_found">Threats Found</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="intelligence_feed">Threat Intelligence</string>
+    <string name="quick_actions">Security Actions</string>
+
+    <string name="scan_url">Scan URL</string>
+    <string name="scan_file">Scan File</string>
+    <string name="deep_analysis">Deep Analysis Scan</string>
+    <string name="enter_url_hint">Enter URL for security indexing</string>
+
+    <string name="no_scans_yet">No threats indexed yet</string>
+    <string name="empty_history_desc">No scans yet. Start scanning URLs and files to build your security history.</string>
+
+    <string name="reputation">REPUTATION</string>
+    <string name="scan_date">SCAN DATE</string>
+    <string name="detection_engines">Detection Engines</string>
+    <string name="search_engines_hint">Filter security vendors&#8230;</string>
+    <string name="category_label">Category:</string>
+    <string name="method_label">Method:</string>
+    <string name="version_label">Version:</string>
+    <string name="updated_label">Updated:</string>
+    <string name="engines_count">%1$d engines</string>
+    <string name="detection_ratio_format">%1$d / %2$d</string>
+    <string name="tech_row_label">%1$s:</string>
+
+    <!-- New Premium Strings -->
+    <string name="url_intelligence">URL Intelligence</string>
+    <string name="url_subtitle">Real-time threat indexing for suspicious links</string>
+    <string name="file_analysis">File Analysis</string>
+    <string name="file_subtitle">Cloud sandboxing and heuristic file scanning</string>
+    <string name="init_deep_scan">INITIALIZE DEEP SCAN</string>
+    <string name="init_cloud_analysis">INITIATE CLOUD ANALYSIS</string>
+    <string name="upload_hint">TAP TO UPLOAD FILE</string>
+    <string name="scanning_status">Connecting to Security Cloud&#8230;</string>
+    <string name="extracting_package">Extracting secure package&#8230;</string>
+    <string name="secure_scan">SECURE SCAN</string>
+    <string name="enterprise_protection">ENTERPRISE THREAT PROTECTION</string>
+    <string name="empty_intelligence">Intelligence database empty</string>
+    <string name="empty_intelligence_desc">No threats indexed in global database</string>
+    <string name="history_title">Consolidated Intelligence</string>
+    <string name="history_subtitle">Active threat logs and analysis reports</string>
+    <string name="search_logs_hint">Search analysis logs&#8230;</string>
+    <string name="empty_logs">No logs found</string>
+    <string name="db_ready">System Database Ready</string>
+    <string name="populate_logs">Initialize a scan to populate intelligence logs</string>
+    <string name="view_report">View report</string>
+    <string name="history_malicious_detected">%1$d malicious indicators detected</string>
+    <string name="history_clean">Analysis complete: Clean</string>
+    <string name="quick_reports">REPORTS</string>
+    <string name="recent_security_logs">RECENT SECURITY LOGS</string>
+    <string name="global_threat_advisory">GLOBAL THREAT ADVISORY</string>
+    <string name="threat_advisory_desc">Heuristic systems have detected a surge in zero-day exploit attempts targeting mobile protocols. Stay vigilant.</string>
+    <string name="items_selected_format">%1$d items selected</string>
+    <string name="files_stored_format">Files Stored: %1$d</string>
+    <string name="last_scan_format">Last Scan: %1$s</string>
+    <string name="delete_all_data">Delete All Data</string>
+    <string name="delete_selected">Delete selected</string>
+    <string name="close">Close</string>
+    <string name="delete_item">Delete item</string>
+    <string name="delete_report_title">Delete Scan Report?</string>
+    <string name="delete_report_message">Are you sure you want to remove this report from SecureScan? This action cannot be undone.</string>
+    <string name="delete_all_title">Delete All Data?</string>
+    <string name="delete_selected_title">Delete Selected?</string>
+    <string name="delete_confirm_message">Are you sure you want to remove %1$s records from SecureScan? This action cannot be undone.</string>
+    <string name="report_deleted">Report deleted</string>
+    <string name="items_removed">%1$d items removed</string>
+    <string name="logs_cleared">All intelligence logs cleared</string>
+    <string name="scan_date_format">Scan Date: %1$s</string>
+
+    <!-- Dashboard Redesign -->
+    <string name="security_overview">SECURITY OVERVIEW</string>
+    <string name="risk_level_label">Risk Level:</string>
+    <string name="engines_label">Engines:</string>
+    <string name="risk_minimal">Minimal</string>
+    <string name="risk_elevated">Elevated</string>
+    <string name="risk_high">High</string>
+    <string name="risk_critical">Critical</string>
+    <string name="risk_low">Low Risk</string>
+    <string name="status_secure">VERIFIED SECURE</string>
+    <string name="status_protected">PROTECTED</string>
+    <string name="status_at_risk">SYSTEM AT RISK</string>
+    <string name="status_critical">CRITICAL ALERT</string>
+    <string name="status_ready">SYSTEM READY</string>
+    <string name="engines_active">91 Sources</string>
+    <string name="last_sync_now">Automatic cloud synchronization complete: Just now</string>
+    <string name="weekly_forecast">WEEKLY SECURITY FORECAST</string>
+    <string name="security_hub">SECURITY COMMAND HUB</string>
+    <string name="metrics_title">INTELLIGENCE REPORTING</string>
+    <string name="dashboard_score_explanation">This score is calculated using VirusTotal analysis results, including malicious detections, suspicious detections, reputation information, and participating security engines.</string>
+    <string name="last_scan_info_format">Last Scan: %1$s • Result: %2$s</string>
+    <string name="no_recent_activity">No recent system activity detected.</string>
+    <string name="vt_status_label">VirusTotal Status</string>
+    <string name="vt_connected">Connected</string>
+    <string name="threat_intel_label">Threat Intelligence</string>
+    <string name="intel_up_to_date">Up To Date</string>
+    <string name="db_sync_label">Database Sync</string>
+    <string name="sync_updated">Updated</string>
+
+    <!-- Result Detail Redesign -->
+    <string name="verdict_safe">🟢 VERIFIED SAFE</string>
+    <string name="verdict_suspicious">🟡 SUSPICIOUS</string>
+    <string name="verdict_malicious">🔴 MALICIOUS</string>
+    <string name="verdict_low_risk">🔵 LOW RISK</string>
+    <string name="threat_level_label">THREAT LEVEL</string>
+    <string name="detection_ratio_label">DETECTION RATIO</string>
+    <string name="technical_intel">TECHNICAL INTELLIGENCE</string>
+    <string name="analysis_evidence">ANALYSIS EVIDENCE</string>
+    <string name="analysis_summary">SYSTEM ANALYSIS SUMMARY</string>
+    <string name="evidence_malicious_title">Why this is considered malicious</string>
+    <string name="evidence_suspicious_title">Why this is considered suspicious</string>
+    <string name="evidence_safe_title">Why this is considered safe</string>
+    <string name="score_explanation">This score is calculated from VirusTotal analysis results, including malicious detections, suspicious detections, reputation data, and participating security engines.</string>
+</resources>
